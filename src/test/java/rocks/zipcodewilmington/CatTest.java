@@ -2,7 +2,9 @@ package rocks.zipcodewilmington;
 
 import org.junit.Assert;
 import org.junit.Test;
+import rocks.zipcodewilmington.animals.Animal;
 import rocks.zipcodewilmington.animals.Cat;
+import rocks.zipcodewilmington.animals.Mammal;
 
 import java.util.Date;
 
@@ -163,9 +165,66 @@ public class CatTest {
 
 
     // TODO - Create tests for `Integer getId()`
-    // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
-    // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
+    @Test
+    public void getIdTest() {
 
+        //Given a cat and expected id
+        Cat testCat = new Cat("Bob", new Date(2021, 4, 13 ), 2);
+        Integer expId = 2;
+
+        //When the method is called to get the id
+        Integer actId = testCat.getId();
+
+        //Then check that expected and actual ids match
+        Assert.assertEquals(expId, actId);
+    }
+
+    @Test
+    public void getIdTest2() {
+
+        //Given a cat and expected id
+        Cat testCat = new Cat("Jojo", new Date(2022, 7, 28 ), 5);
+        Integer expId = 5;
+
+        //When the method is called to get the id
+        Integer actId = testCat.getId();
+
+        //Then check that expected and actual ids match
+        Assert.assertEquals(expId, actId);
+    }
+
+    // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
+    @Test
+    public void checkAnimalInheritanceTest() {
+
+        //Given a cat and expected id
+        Cat testCat = new Cat("Jojo", new Date(2018, 7, 28 ), 5);
+        Boolean expInstOf = true;
+
+        //When the method is called to get the id
+        Boolean actInstOf = (testCat instanceof Animal);
+
+        //Then check that expected and actual ids match
+        Assert.assertEquals(expInstOf, actInstOf);
+
+    }
+
+
+    // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
+    @Test
+    public void checkMammalInheritanceTest() {
+
+        //Given a cat and expected id
+        Cat testCat = new Cat("Bully", new Date(2008, 6, 22 ), 9);
+        Boolean expInstOf = true;
+
+        //When the method is called to get the id
+        Boolean actInstOf = (testCat instanceof Mammal);
+
+        //Then check that expected and actual ids match
+        Assert.assertEquals(expInstOf, actInstOf);
+
+    }
 
     @Test
     public void constructorTest() {
